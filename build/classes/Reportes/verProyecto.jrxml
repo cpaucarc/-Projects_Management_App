@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="verProyecto" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="338ceb6f-1383-4f00-8a02-2a6c65330a52">
+	<property name="ireport.zoom" value="1.9487171000000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="354"/>
+	<parameter name="idProy" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\PAUCAR\\Documents\\NetBeansProjects\\Proyectos\\src\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_datosProyecto($P{idProy});]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="proyecto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="condicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="presentacion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fin" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fase" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="institucion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semestre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inicioSemestre" class="java.sql.Date"/>
+	<field name="finSemestre" class="java.sql.Date"/>
+	<field name="docente" class="java.lang.Integer"/>
+	<variable name="docente_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{docente}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="215" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="90" width="110" height="20" forecolor="#999999" uuid="34e6a572-d541-4cb3-9504-cddf5f6ce396"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Institucion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="130" width="110" height="20" forecolor="#999999" uuid="78b5ffbc-d638-4f1d-b426-e9d43bad2ed0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha de Inicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="150" width="110" height="20" forecolor="#999999" uuid="72dd21f0-939b-40c2-a87e-eccfa3f61be5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha de Finalizacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="170" width="110" height="20" forecolor="#999999" uuid="bddb8b29-36a1-48d1-beb3-d820cffd645f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[N° de participantes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="190" width="110" height="20" forecolor="#999999" uuid="a40dfeee-717e-4017-ab53-80ca59556cf9"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Participantes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="90" width="200" height="20" forecolor="#40454E" uuid="5b753464-58e1-4daa-8db9-1c67a125840a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institucion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="130" width="200" height="20" forecolor="#40454E" uuid="30c0100d-69dc-47aa-89c8-f033cac992ce"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $F{inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="150" width="200" height="20" forecolor="#40454E" uuid="8f322f46-93ba-41f2-9832-8bb8e9a9f414"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $F{fin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="20" width="475" height="30" forecolor="#0078D7" uuid="7f8b1c15-5ca8-4c1f-95e7-61a97ee759aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proyecto}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="385" y="110" width="130" height="80" forecolor="#CCCCCC" uuid="8d9158c6-ecdf-43f2-888a-e71e66634523"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="40" y="70" width="110" height="20" forecolor="#999999" uuid="7ff15a0b-d8f0-4c9b-bcda-93b5c2bb3093"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Fase de implementacion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="70" width="200" height="20" forecolor="#40454E" uuid="a3777146-989d-46c4-85d1-68a26ad3c892"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fase}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="385" y="110" width="130" height="20" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="48e032f9-421a-4bba-afe0-482e659723d3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="385" y="110" width="130" height="20" forecolor="#191919" uuid="673b55c5-5826-4153-990b-ee9ba9986522"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Semestre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="130" width="130" height="20" forecolor="#40454E" uuid="8d932395-4ad0-4fca-90a3-88b74ef2e26d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{semestre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="150" width="100" height="20" forecolor="#40454E" uuid="f95624dd-e581-4b66-b07f-7dc6ab3ef314"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Inicio: "+$F{inicioSemestre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="170" width="100" height="20" forecolor="#40454E" uuid="abf87106-86e8-4be0-86da-bbcffe38b8dd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Fin   : " + $F{finSemestre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="110" width="110" height="20" forecolor="#999999" uuid="56b89405-a8e9-45c4-9ead-26254e0e6f20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha de presentacion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="110" width="200" height="20" forecolor="#40454E" uuid="8f84af09-5f55-4c34-9c1a-3c3eb7b55e37"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $F{presentacion}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="160" y="170" width="200" height="20" forecolor="#40454E" uuid="509d44d5-809e-43c8-917d-5ed6cb3fc166"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{docente_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="435" y="70" width="80" height="30" forecolor="#40454E" uuid="ee78e5a7-f834-43c5-8365-6d0b260e4cce"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="385" y="70" width="50" height="30" forecolor="#999999" uuid="80fd538a-f4a8-447e-90c7-440b6a5fc293"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha de Consulta : ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement x="10" y="5" width="545" height="120" uuid="cd0ee228-29d5-41c6-82c2-a8ad662e6415"/>
+				<subreportParameter name="iddocente">
+					<subreportParameterExpression><![CDATA[$F{docente}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="idproyecto">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "docente_proyecto.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="217" y="0" width="80" height="20" uuid="a7d65d05-b65d-406e-bd0d-16b2e369e1c2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="297" y="0" width="40" height="20" uuid="29d70759-8074-4572-af35-8e99e4b972ec"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

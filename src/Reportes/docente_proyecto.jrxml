@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="docente_proyecto" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="db83fe1e-af9b-4d69-8ad9-ceada54c454a">
+	<property name="ireport.zoom" value="1.4641000000000033"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="iddocente" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idproyecto" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_datosDocenteEnProyecto($P{iddocente}, $P{idproyecto});]]>
+	</queryString>
+	<field name="dni" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="docente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="genero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="escuela" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="facultad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="informes" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="115" splitType="Stretch">
+			<textField>
+				<reportElement x="355" y="10" width="170" height="20" forecolor="#40454E" uuid="0edce578-b5c5-46a3-8ea0-0be6f7dd9688"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="10" width="220" height="20" forecolor="#40454E" uuid="fc6fa348-e014-42ff-9f31-138b6f08edce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{docente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="55" width="170" height="20" forecolor="#40454E" uuid="927a6f8f-c5ad-4daf-a4b0-5ffadb9fcd1f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{genero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="95" width="170" height="20" forecolor="#40454E" uuid="db04c430-adde-4151-99fe-13e6249c8121"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="95" width="170" height="20" forecolor="#40454E" uuid="c54a830a-5816-470e-87f9-28c882568fa2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="55" width="170" height="20" forecolor="#40454E" uuid="8a085a9d-9e1c-4766-aa4f-ce509c72eb28"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="75" width="170" height="20" forecolor="#40454E" uuid="53994d17-c595-48fe-a4b2-45ace185355c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{escuela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="75" width="170" height="20" forecolor="#40454E" uuid="d03375e6-d37a-41aa-b4db-be8adfc10fe8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facultad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="35" width="170" height="20" forecolor="#40454E" uuid="526e6fab-5a14-4078-a39c-56545d510256"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="35" width="170" height="20" forecolor="#40454E" uuid="2f56cd79-cd28-4164-96e6-82c16c64386b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{informes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="95" width="45" height="20" forecolor="#999999" uuid="daf1dfb1-cb46-4fff-9d93-590323e6dc25"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="95" width="60" height="20" forecolor="#999999" uuid="ff5a6d00-e010-468f-9e44-a1b22296ac00"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Correo Electronico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="35" width="45" height="20" forecolor="#999999" uuid="c30d19af-eee5-410f-aad5-dc0c20462fe3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Cargo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="35" width="60" height="20" forecolor="#999999" uuid="96fd2756-70bb-44a3-b9e6-df8f8414b052"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Informes presentados:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="55" width="45" height="20" forecolor="#999999" uuid="23ef0db1-a898-4c40-a3c2-cce632685314"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Género:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="10" width="60" height="20" forecolor="#999999" uuid="b6fe7ade-6b6e-4a14-b60c-6ec099fbf7b9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[N° DNI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="55" width="60" height="20" forecolor="#999999" uuid="890c9f24-e053-4072-94c9-f7ce935d80bf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Situacion Laboral:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="75" width="45" height="20" forecolor="#999999" uuid="ebd401d1-42bc-44ac-bafa-bcf64069558a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Escuela:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="75" width="60" height="20" forecolor="#999999" uuid="8fa208e3-1e24-47bb-aa7b-cc4774a8fa77"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Facultad:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="30" y="15" width="10" height="10" forecolor="#0078D7" backcolor="#0078D7" uuid="c63eb299-d67d-4c08-98cf-8818aae9516c"/>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>
